@@ -45,13 +45,12 @@ const CartDisplay: React.FC<Props> = ({ shippingPrice, total, onCheckout }) => {
     };
 
     const handleCheckout = () => {
-        // Check if all fields are filled
         if (checkoutData.cardName && checkoutData.cardNumber && checkoutData.date && checkoutData.cvv) {
             onCheckout(checkoutData);
-            setCheckoutData({ cardName: '', cardNumber: '', date: '', cvv: '' }); // Reset form
-            setSubmitAttempted(false); // Reset submission attempt flag
+            setCheckoutData({ cardName: '', cardNumber: '', date: '', cvv: '' });
+            setSubmitAttempted(false);
         } else {
-            setSubmitAttempted(true); // Set flag to show error messages
+            setSubmitAttempted(true);
         }
     };
 
